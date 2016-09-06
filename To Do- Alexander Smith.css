@@ -1,0 +1,30 @@
+ul{
+
+color: red;
+font-family: Edwardian Script ITC;
+font-size: 300%;
+
+}
+p{
+color: red;
+font-family: Edwardian Script ITC;
+font-size: 150%;}
+#list{
+background-color: #D4AF37;
+}
+#box{
+background-color: 	#960018;
+background-image: url("Rose.jpg");
+background-position: center;
+background-size: contain;
+background-repeat:no-repeat;
+}
+#boxheader{
+color: orange;
+font-family: Edwardian Script ITC;
+font-size: 600%;
+}
+#theButton{
+color:#FFBF00;
+font-family: Edwardian Script ITC;
+}
