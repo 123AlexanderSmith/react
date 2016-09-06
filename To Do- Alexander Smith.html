@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<style>
+ul{
+
+color: red;
+font-family: Edwardian Script ITC;
+font-size: 300%;
+
+}
+p{
+color: red;
+font-family: Edwardian Script ITC;
+font-size: 150%;}
+#list{
+background-color: #D4AF37;
+}
+#box{
+background-color: 	#960018;
+background-image: url("Rose.jpg");
+background-position: center;
+background-size: contain;
+background-repeat:no-repeat;
+}
+#boxheader{
+color: orange;
+font-family: Edwardian Script ITC;
+font-size: 600%;
+}
+#theButton{
+color:#FFBF00;
+font-family: Edwardian Script ITC;
+}
+</style>
+
+
+<head>
+<title>To Do List</title>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body  style= "background-color: black">
+<div class= "container">
+	<div  id= "box" class= "jumbotron">
+		<h1 id= "boxheader" >To Do List</h1>
+			
+			<input id= "listItem"></input>
+		
+			
+			<button id="theButton" type="button" class="btn btn-danger">Add Item</button>
+		</div>
+		
+	<div id="list" class= "well well-sm">
+		<section style="border:solid 1px #FFBF00">
+		
+			<ul id="thing">
+			</ul>
+	
+
+		</section>
+	</div>
+	
+	<p id="totalvalues">Number of Items: <span id="itemValue">0</span></p>
+</div>
+
+<script>
+$(document).ready(function(){
+	$('#theButton').click(function(){
+		var listEntry = String(document.getElementById('listItem').value);
+	run(listEntry);
+	
+	});
+	$('#thing').on('click','.singleItem', function(){
+	$(this).parent().remove();
+	document.getElementById("itemValue").innerHTML = Number(document.getElementById("itemValue").innerHTML) - 1;
+	});
+});
+
+function run(listEntry){
+	var result = listEntry;
+
+	var item = "<p> <input type='checkbox' class='singleItem'>" + result + "</p>";
+	$('ul').append(item);
+	document.getElementById("itemValue").innerHTML = Number(document.getElementById("itemValue").innerHTML) + 1;
+}
+</script>
+
+</body>
+</html> 
+
+
